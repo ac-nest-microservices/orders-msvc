@@ -15,13 +15,13 @@ import {
   OrderPaginationDto,
   ProductDto,
 } from './dto';
-import { PRODUCTS_SERVICE } from '../config';
+import { NATS_SERVICE } from '../config';
 
 @Injectable()
 export class OrdersService extends PrismaClient implements OnModuleInit {
   readonly #logger = new Logger(OrdersService.name);
 
-  constructor(@Inject(PRODUCTS_SERVICE) private readonly client: ClientProxy) {
+  constructor(@Inject(NATS_SERVICE) private readonly client: ClientProxy) {
     super();
   }
 
